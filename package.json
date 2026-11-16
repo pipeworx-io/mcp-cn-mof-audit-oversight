@@ -1,0 +1,33 @@
+{
+  "name": "@pipeworx/mcp-cn-mof-audit-oversight",
+  "version": "0.1.0",
+  "description": "cn-mof-audit-oversight -- accounting-firm and asset-appraisal-firm oversight bulletins published by China's Ministry of Finance (财政部), Supervision and Evaluation Bureau (监督评价局): fiscal and accounting supervision inspection bulletins (财会监督检查公告), administrative penalty decisions against audit firms…",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "mcp-cn-mof-audit-oversight": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "cn-mof-audit-oversight"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pipeworx-io/mcp-cn-mof-audit-oversight.git"
+  },
+  "mcpName": "io.github.pipeworx-io/cn-mof-audit-oversight",
+  "pipeworx": {
+    "mode": "gateway",
+    "slug": "cn-mof-audit-oversight",
+    "gatewaySlug": "cn-mof-audit-oversight",
+    "sourceHash": "v1-3d9ce293721b8dda319eb8a671eafbb9aca134f7fe9b4820383456fb29057a8b",
+    "sourceCommit": "874331b0c46b151f9264bd14840631427a7721c1"
+  }
+}

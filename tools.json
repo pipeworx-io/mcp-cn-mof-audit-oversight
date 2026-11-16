@@ -1,0 +1,48 @@
+[
+  {
+    "name": "cn_mof_bulletins_list",
+    "description": "List China's Ministry of Finance (财政部) published oversight bulletins on accounting firms, audit firms and asset-appraisal firms: fiscal and accounting supervision inspection bulletins (财会监督检查公告) with typical cases of audit failure, administrative penalty decisions against named audit firms, annual lists of firms selected for practice-quality inspection, and serious-dishonesty (失信主体) and delivery notices. Answers which audit or appraisal firms the Ministry has penalised, inspected or named, and when, with the link to the official bulletin. FIRMS ONLY: rows about individuals are omitted and counted. About 10 rows per page, newest first; `query` (Chinese words) and `kind` match titles on the page read only. No match says which page was read. Example: kind=inspection_bulletin.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "Chinese words matched in the titles of the page read (处罚, 检查名单, 失信). Optional."
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "inspection_bulletin",
+            "inspection_list",
+            "penalty_decision",
+            "service_notice",
+            "credit_blacklist",
+            "case_roundup",
+            "other"
+          ],
+          "description": "Filter rows on the page read by bulletin type. Optional."
+        },
+        "page": {
+          "type": "number",
+          "description": "Page number, 1 = newest (default 1). The response gives pages_total."
+        }
+      }
+    }
+  },
+  {
+    "name": "cn_mof_bulletin_get",
+    "description": "Read one Ministry of Finance (财政部) oversight bulletin: the text of a fiscal and accounting supervision inspection bulletin (typical cases naming audit firms, fines and sanctions), a penalty decision summary against an audit firm, or a list of firms selected for practice-quality inspection, plus the firm names found in it, the date and the type. Takes the `bulletin_url` of a row from cn_mof_bulletins_list. Clauses naming accountants, appraisers and company officers are left out and counted.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "bulletin_url": {
+          "type": "string",
+          "description": "Bulletin link as returned by cn_mof_bulletins_list."
+        }
+      },
+      "required": [
+        "bulletin_url"
+      ]
+    }
+  }
+]

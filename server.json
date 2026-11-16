@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.pipeworx-io/cn-mof-audit-oversight",
+  "title": "Cn Mof Audit Oversight",
+  "description": "cn-mof-audit-oversight -- accounting-firm and asset-appraisal-firm oversight bulletins published…",
+  "version": "0.1.0",
+  "websiteUrl": "https://pipeworx.io/packs/cn-mof-audit-oversight",
+  "repository": {
+    "url": "https://github.com/pipeworx-io/mcp-cn-mof-audit-oversight",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://gateway.pipeworx.io/cn-mof-audit-oversight/mcp"
+    }
+  ]
+}
